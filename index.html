@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <!--Google fonts CSS-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--My CSS-->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="nav-container">
+          <div class="logo">
+            <img src="images/logo.svg" alt="Fylo logo" />
+          </div>
+          <ul class="icon-list">
+            <li>
+              <a href="#"
+                ><img src="images/icon-document.svg" alt="document icon"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon-folder.svg" alt="folder icon"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon-upload.svg" alt="upload icon"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="content-container">
+          <div class="bubble">
+            <h2><span id="bubble-value"></span> GB left</h2>
+          </div>
+          <div class="data-container">
+            <p>
+              You’ve used
+              <strong><span id="used-GB"></span> GB</strong> of your storage
+            </p>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="mySlider"
+                min="0"
+                max="1000"
+                value="815"
+              />
+            </div>
+            <div class="range-data">
+              <h3>0 GB</h3>
+              <h3>1000 GB</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="main.js"></script>
+</html>
