@@ -103,13 +103,24 @@ main::after {
 .container .content-container .bubble {
   text-align: center;
   border-radius: 10px 10px 0 10px;
-  width: 180px;
+  width: 160px;
   height: 68px;
   line-height: 68px;
   position: absolute;
   right: 10%;
   top: 0;
   background-color: white;
+}
+
+.container .content-container .bubble::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  border-top: 20px solid #fff;
+  border-left: 20px solid transparent;
 }
 
 .container .content-container .bubble h2 {
@@ -148,66 +159,81 @@ main::after {
   font-size: 12px;
 }
 
-#mySlider {
+/*Slider css*/
+.container .content-container .data-container .slider-container {
+  position: relative;
+}
+
+.container .content-container .data-container #mySlider {
   -webkit-appearance: none;
   width: 100%;
   height: 15px;
-  background: linear-gradient(
-    to right,
-    linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%)) 0%,
-    linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%)) 50%,
-    #fff 50%,
-    #fff 100%
-  );
+  background: var(--bg-dark-color);
   outline: none;
   border-radius: 15px;
-  padding: 1px;
-  opacity: 0.7;
+  position: relative;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-}
-
-#mySlider:hover {
-  opacity: 1;
+  z-index: 2;
 }
 
 #mySlider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+#mySlider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+#selector-button {
+  height: 20px;
+  width: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  z-index: 3;
+}
+
+.select-btn {
   width: 10px;
   height: 10px;
   background: #fff;
   border-radius: 50%;
+  position: absolute;
+  bottom: 6px;
+  z-index: 3;
   cursor: pointer;
-  outline: none;
+}
+
+#progress-bar {
+  width: 85%;
+  height: 14px;
+  background: var(--bar-color);
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 #mySlider::-webkit-slider-runnable-track {
   border-radius: 15px;
 }
 
-#mySlider::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .container .content-container .range-data {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
 
 @media only screen and (max-width: 500px) {
@@ -243,6 +269,11 @@ main::after {
     height: 60px;
     line-height: 60px;
     transform: translate(-50%, 50%);
+    border-radius: 10px;
+  }
+
+  .container .content-container .bubble::after {
+    display: none;
   }
 
   .container .content-container .bubble h2 {
