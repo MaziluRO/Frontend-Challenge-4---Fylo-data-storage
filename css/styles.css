@@ -55,20 +55,20 @@ main::after {
   align-items: flex-end;
   justify-content: space-between;
   width: 65vw;
-  min-height: 180px;
-  /*background-color: green;*/
+  height: 180px;
 }
 
 /*Nav container*/
 .container .nav-container {
   background-color: var(--bg-color);
   border-radius: 10px 110px 10px 10px;
-  min-height: inherit;
+  height: inherit;
   width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 30px;
+  flex-shrink: 0;
 }
 
 .icon-list {
@@ -91,13 +91,12 @@ main::after {
 /*content container */
 .container .content-container {
   width: 60%;
-  min-height: inherit;
+  height: inherit;
   color: var(--primary-color);
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
   position: relative;
-  /*background-color: coral;*/
 }
 
 .container .content-container .bubble {
@@ -168,22 +167,46 @@ main::after {
   -webkit-appearance: none;
   width: 100%;
   height: 15px;
-  background: var(--bg-dark-color);
   outline: none;
   border-radius: 15px;
   position: relative;
+  z-index: 3;
+  background: transparent;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+}
+
+#background-bar {
+  width: 100%;
+  background: var(--bg-dark-color);
+  height: 18px;
+  position: absolute;
+  bottom: 14%;
+  left: 0;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+#progress-bar {
+  width: 82.2%;
+  height: 15px;
+  background: var(--bar-color);
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 1px;
   z-index: 2;
 }
 
 #mySlider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
+  width: 11.5px;
+  height: 11.5px;
+  background: #fff;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 3;
   position: relative;
+  z-index: 3;
 }
 
 #mySlider::-moz-range-thumb {
@@ -191,43 +214,7 @@ main::after {
   width: 10px;
   height: 10px;
   cursor: pointer;
-  z-index: 3;
   position: relative;
-}
-
-#selector-button {
-  height: 20px;
-  width: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 80%;
-  z-index: 3;
-}
-
-.select-btn {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 6px;
-  z-index: 3;
-  cursor: pointer;
-}
-
-#progress-bar {
-  width: 85%;
-  height: 14px;
-  background: var(--bar-color);
-  border-radius: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-#mySlider::-webkit-slider-runnable-track {
-  border-radius: 15px;
 }
 
 .container .content-container .range-data {
@@ -251,7 +238,7 @@ main::after {
   }
 
   .container .content-container {
-    margin-top: 10px;
+    margin-top: 30px;
     justify-content: flex-end;
   }
 
