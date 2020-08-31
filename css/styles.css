@@ -290,8 +290,19 @@ main::after {
   }
 }
 
+/*Tablets*/
 @media (min-width: 501px) and (max-width: 768px) {
   .container {
     width: 85vw;
+  }
+
+  .container .nav-container,
+  .container .content-container {
+    height: 70%;
+  }
+
+  .container .content-container .bubble {
+    height: 65px;
+    line-height: 65px;
   }
 }
