@@ -52,17 +52,17 @@ main::after {
 
 .container {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  width: 65vw;
-  height: 180px;
+  width: 80vw;
+  height: 40vh;
 }
 
 /*Nav container*/
 .container .nav-container {
   background-color: var(--bg-color);
   border-radius: 10px 110px 10px 10px;
-  height: inherit;
+  height: 60%;
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -91,11 +91,13 @@ main::after {
 /*content container */
 .container .content-container {
   width: 60%;
-  height: inherit;
+  height: 60%;
   color: var(--primary-color);
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -141,7 +143,8 @@ main::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: auto;
+  height: 80%;
+  width: 100%;
   padding: 30px;
 }
 
@@ -187,17 +190,6 @@ main::after {
   z-index: 1;
 }
 
-#progress-bar {
-  width: 82.2%;
-  height: 15px;
-  background: var(--bar-color);
-  border-radius: 15px;
-  position: absolute;
-  top: 0;
-  left: 1px;
-  z-index: 2;
-}
-
 #mySlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 11.5px;
@@ -217,6 +209,20 @@ main::after {
   position: relative;
 }
 
+#progress-bar {
+  width: 82.2%;
+  height: 15px;
+  background: var(--bar-color);
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  z-index: 2;
+  margin: 0 2px;
+  min-width: 2%;
+  max-width: 99%;
+}
+
 .container .content-container .range-data {
   display: flex;
   align-items: center;
@@ -224,8 +230,16 @@ main::after {
 }
 
 @media only screen and (max-width: 500px) {
+  main::after {
+    display: none;
+  }
+
+  main {
+    background: url("../images/bg-mobile.png") no-repeat center center/cover;
+  }
+
   .container {
-    min-height: 200px;
+    height: 70vh;
     width: 90vw;
     flex-direction: column;
     align-items: center;
@@ -234,17 +248,20 @@ main::after {
 
   .container .content-container,
   .container .nav-container {
-    width: 85%;
+    width: 95%;
+    height: 45%;
   }
 
   .container .content-container {
-    margin-top: 30px;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .container .content-container .data-container {
-    align-self: flex-end;
-    padding: 50px 30px;
+    padding: 40px 30px;
+  }
+
+  .container .content-container .data-container p {
+    font-size: 12px;
   }
 
   .container .content-container .bubble {
@@ -255,7 +272,7 @@ main::after {
     width: 160px;
     height: 60px;
     line-height: 60px;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 10%);
     border-radius: 10px;
   }
 
@@ -269,7 +286,7 @@ main::after {
 
   .container .content-container .bubble span {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
