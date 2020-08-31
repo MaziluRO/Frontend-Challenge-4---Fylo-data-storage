@@ -54,7 +54,7 @@ main::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80vw;
+  width: 70vw;
   height: 40vh;
 }
 
